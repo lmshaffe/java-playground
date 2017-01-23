@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+    	mavenCentral()
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.0.BUILD-SNAPSHOT"
+    }
+}
+
+apply plugin: 'java'
+apply plugin : 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'springboot-hazelcast-client'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenCentral()
+    jcenter()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web" 
+    compile 'com.hazelcast:hazelcast-all:3.3'
+    compile "javax.annotation:jsr250-api:1.0"
+    compile "javax.cache:cache-api:1.0.0"
+ /*   compile 'org.apache.commons:commons-collections4:4.0'
+    compile("org.springframework:spring-web")
+    compile("com.fasterxml.jackson.core:jackson-databind") */
+    testCompile "org.springframework.boot:spring-boot-starter-test" 
+}

@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+    	mavenCentral()
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+}
+
+apply plugin: 'java'
+apply plugin : 'eclipse'
+
+jar {
+    baseName = 'spring-jcache-test'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenCentral()
+    jcenter()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile "org.springframework:spring-core:4.2.3.RELEASE" 
+    compile "org.springframework:spring-context:4.2.3.RELEASE" 
+    compile "org.springframework:spring-context-support:4.2.3.RELEASE"
+    compile "org.springframework:spring-aop:4.2.3.RELEASE"
+    compile "javax.annotation:jsr250-api:1.0"
+    compile "javax.cache:cache-api:1.0.0"
+    compile "com.hazelcast:hazelcast-all:3.7-EA"
+}
